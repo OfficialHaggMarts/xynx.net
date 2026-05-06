@@ -173,7 +173,7 @@
 
 .copy-btn:hover {
     background: rgba(0, 255, 128, 0.35);
-
+}
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translate(-50%, -48%); }
@@ -202,41 +202,6 @@
             text-align: center;
             opacity: 0.7;
         }
-        
-        }
-.profile-bar-pfp {
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border: 2px solid rgba(107, 124, 255, 0.4);
-    box-shadow: 0 0 15px rgba(107, 124, 255, 0.35);
-}
- .profile-bar {
-    margin: 5px auto 25px auto;
-    padding: 3px 12px;
-    width: 90%;
-    max-width: 450px;
-
-    display: flex;
-    align-items: center;
-    gap: 18px;
-
-    background: #1a1c23; /* SOLID SPACE GRAY */
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 15px;
-
-    box-shadow: 0 0 25px rgba(107, 124, 255, 0.25);
- }
- .profile-bar-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* THIS FIXES THE SYMMETRY */
-}
-
-
-
     </style>
 </head>
 
@@ -248,30 +213,16 @@
     <!-- ===========================
          HERO SECTION
     ============================ -->
-<div class="hero">
-
-    <h1>A little about me</h1>
-
-<div class="profile-bar">
-    <img src="assets/img/xynxprofile.png" class="profile-bar-pfp">
-
-    <div class="profile-bar-info">
-        <div class="profile-bar-name">(xynx) <span class="realname">Dylan</span></div>
-        <div class="profile-bar-tag">Developer • Creator • Problem Solver</div>
+    <div class="hero">
+        <h1>A little about me</h1>
+        <h2 class="tagline">Developer • Creator • Problem Solver</h2>
+        <p class="intro">
+            Hello, I am <span class="highlight">xynx</span> — an experienced developer, content creator, and scripter based in <span class="highlight">Perth, Western Australia.</span>
+            I’ve completed projects for clients across the world, delivering clean, efficient, and modern digital solutions.
+            My work spans game development, scripting, web design, and creative production, with a focus on precision,
+            reliability, and intentional design.
+        </p>
     </div>
-</div>
-    <h2 class="tagline">Developer • Creator • Problem Solver</h2>
-
-    <p class="intro">
-        Hello, I am <span class="highlight">xynx</span> — an experienced developer, content creator, and scripter based in
-        <span class="highlight">Perth, Western Australia.</span>
-        I’ve completed projects for clients across the world, delivering clean, efficient, and modern digital solutions.
-        My work spans game development, scripting, web design, and creative production, with a focus on precision,
-        reliability, and intentional design.
-    </p>
-
-</div>
-
 
     <!-- ===========================
          LEARN MORE BUTTONS
