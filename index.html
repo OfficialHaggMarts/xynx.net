@@ -202,6 +202,23 @@
             text-align: center;
             opacity: 0.7;
         }
+ .profile-bar {
+    margin: 25px auto 40px auto;
+    padding: 18px 24px;
+    width: 90%;
+    max-width: 650px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: #1a1c23; /* SOLID SPACE GRAY */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+
+    box-shadow: 0 0 25px rgba(107, 124, 255, 0.25);
+}
+
     </style>
 </head>
 
@@ -213,16 +230,30 @@
     <!-- ===========================
          HERO SECTION
     ============================ -->
-    <div class="hero">
-        <h1>A little about me</h1>
-        <h2 class="tagline">Developer • Creator • Problem Solver</h2>
-        <p class="intro">
-            Hello, I am <span class="highlight">xynx</span> — an experienced developer, content creator, and scripter based in <span class="highlight">Perth, Western Australia.</span>
-            I’ve completed projects for clients across the world, delivering clean, efficient, and modern digital solutions.
-            My work spans game development, scripting, web design, and creative production, with a focus on precision,
-            reliability, and intentional design.
-        </p>
+<div class="hero">
+
+    <h1>A little about me</h1>
+
+<div class="profile-bar">
+    <img src="assets/img/xynx.png" class="profile-bar-pfp">
+
+    <div class="profile-bar-info">
+        <div class="profile-bar-name">xynx <span class="realname">(Dylan)</span></div>
+        <div class="profile-bar-tag">Developer • Creator • Problem Solver</div>
     </div>
+</div>
+    <h2 class="tagline">Developer • Creator • Problem Solver</h2>
+
+    <p class="intro">
+        Hello, I am <span class="highlight">xynx</span> — an experienced developer, content creator, and scripter based in
+        <span class="highlight">Perth, Western Australia.</span>
+        I’ve completed projects for clients across the world, delivering clean, efficient, and modern digital solutions.
+        My work spans game development, scripting, web design, and creative production, with a focus on precision,
+        reliability, and intentional design.
+    </p>
+
+</div>
+
 
     <!-- ===========================
          LEARN MORE BUTTONS
