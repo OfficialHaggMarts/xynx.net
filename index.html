@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage | xynx.net</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Dont Forget About My Copyrights Lil Bro -->
+
+    <style>
+        /* ===========================
+           MAIN PAGE STYLING
+        ============================ */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #0a0f1a, #111827);
+            color: #e0e6f0;
+            text-align: center;
+        }
+
+        .hero {
+            padding: 120px 20px;
+        }
+
+        h1 {
+            font-size: 64px;
+            color: #cdd9ff;
+            text-shadow: 0 0 20px #6b7cff;
+        }
+        .tagline {
+            font-size: 24px;
+            margin-top: -10px;
+            color: #bfcaff;
+            font-weight: 500;
+            text-shadow: 0 0 12px rgba(107, 124, 255, 0.4);
+        }
+        .intro {
+            max-width: 700px;
+            margin: 20px auto;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #d0d7e6;
+            font-weight: 600;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #cdd9ff;
+        }
+
+        .section-title {
+            margin-top: 80px;
+            font-size: 32px;
+            color: #cdd9ff;
+            text-shadow: 0 0 10px #6b7cff;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            background: rgba(80, 100, 160, 0.2);
+            border: 1px solid #6b7cff;
+            border-radius: 8px;
+            color: #cdd9ff;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: rgba(120, 140, 220, 0.3);
+            box-shadow: 0 0 12px #6b7cff;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .icon {
+            font-size: 28px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .icon:hover {
+            color: #9bb3ff;
+            text-shadow: 0 0 10px #6b7cff;
+        }
+
+        /* ===========================
+           POPUP STYLING
+        ============================ */
+        .popup-bg {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 900;
+        }
+
+        .popup-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #0f1624;
+            border: 1px solid #6b7cff;
+            padding: 25px 35px;
+            border-radius: 12px;
+            color: #dce3ff;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(107, 124, 255, 0.4);
+            z-index: 1000;
+            animation: fadeIn 0.25s ease-out;
+        }
+
+        #popup-text {
+            font-size: 24px;
+        }
+
+        .close-btn {
+            margin-top: 20px;
+            padding: 10px 22px;
+            background: rgba(107, 124, 255, 0.2);
+            border: 1px solid #6b7cff;
+            border-radius: 6px;
+            color: #cdd9ff;
+            cursor: pointer;
+            transition: 0.2s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 600;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 1, 1, 0.4);
+        }
+.copy-btn {
+    margin-top: 10px;
+    padding: 10px 22px;
+    background: rgba(107, 255, 150, 0.2);
+    border: 1px solid #6bff9b;
+    border-radius: 6px;
+    color: #caffdd;
+    cursor: pointer;
+    transition: 0.2s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+}
+
+.copy-btn i {
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+.copy-btn:hover {
+    background: rgba(0, 255, 128, 0.35);
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, -48%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
+        }
+
+        /* ===========================
+           CANVAS BACKGROUND
+        ============================ */
+        #sky {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        /* ===========================
+           FOOTER
+        ============================ */
+        .footer {
+            margin-top: 80px;
+            padding: 20px 0;
+            font-size: 14px;
+            color: #8f9bbd;
+            text-align: center;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <canvas id="sky"></canvas>
+
+    <!-- ===========================
+         HERO SECTION
+    ============================ -->
+    <div class="hero">
+        <h1>A little about me</h1>
+        <h2 class="tagline">Developer • Creator • Problem Solver</h2>
+        <p class="intro">
+            Hello, I am <span class="highlight">xynx</span> — an experienced developer, content creator, and scripter based in <span class="highlight">Perth, Western Australia.</span>
+            I’ve completed projects for clients across the world, delivering clean, efficient, and modern digital solutions.
+            My work spans game development, scripting, web design, and creative production, with a focus on precision,
+            reliability, and intentional design.
+        </p>
+    </div>
+
+    <!-- ===========================
+         LEARN MORE BUTTONS
+    ============================ -->
+    <div class="section-title">Learn More</div>
+
+    <div class="button-container">
+        <a class="btn" href="/Professional">Professional History</a>
+        <a class="btn" href="/Hobbies">Hobbies</a>
+        <a class="btn" href="/Academic">Academic History</a>
+    </div>
+
+    <!-- ===========================
+         SOCIAL LINKS
+    ============================ -->
+    <div class="section-title">Social Links</div>
+
+    <div class="social-icons">
+        <i class="fa-brands fa-discord icon" onclick="openPopup('discord')"></i>
+        <i class="fa-brands fa-tiktok icon" onclick="openPopup('tiktok')"></i>
+        <i class="fa-solid fa-envelope icon" onclick="openPopup('email')"></i>
+    </div>
+
+    <!-- ===========================
+         POPUP ELEMENTS
+    ============================ -->
+    <div id="popup-bg" class="popup-bg" onclick="closePopup()"></div>
+
+<div id="popup-box" class="popup-box">
+    <span id="popup-text"></span>
+
+    <button class="copy-btn" onclick="copyPopupText()">
+       <i class="fa-solid fa-clipboard"></i> Copy
+    </button>
+</div>
+
+<!-- ===========================
+     JAVASCRIPT
+=========================== -->
+
+<script>
+
+    /* ---------------------------
+       POPUP FUNCTIONS (UPGRADED)
+    --------------------------- */
+    function openPopup(type) {
+        let content = "";
+
+        if (type === "discord") {
+            content = `
+                <i class="fa-brands fa-discord popup-icon discord"></i>
+                <span class="popup-highlight">@notxynx</span>
+            `;
+        }
+
+        if (type === "tiktok") {
+            content = `
+                <i class="fa-brands fa-tiktok popup-icon tiktok"></i>
+                <span class="popup-highlight">yourlink</span>
+            `;
+        }
+
+        if (type === "email") {
+            content = `
+                <i class="fa-solid fa-envelope popup-icon email"></i>
+                <span class="popup-highlight">enquire@xynx.net</span>
+            `;
+        }
+
+        document.getElementById("popup-text").innerHTML = content;
+        document.getElementById("popup-bg").style.display = "block";
+        document.getElementById("popup-box").style.display = "block";
+    }
+
+    function closePopup() {
+        document.getElementById("popup-bg").style.display = "none";
+        document.getElementById("popup-box").style.display = "none";
+    }
+
+    function copyPopupText() {
+    const text = document.getElementById("popup-text").innerText;
+    navigator.clipboard.writeText(text);
+
+    const btn = document.querySelector(".copy-btn");
+    btn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
+
+    setTimeout(() => {
+        btn.innerHTML = `<i class="fa-solid fa-clipboard"></i> Copy`;
+    }, 1200);
+}
+
+
+    /* ---------------------------
+       CANVAS ANIMATION SETUP
+    --------------------------- */
+    const canvas = document.getElementById("sky");
+    const ctx = canvas.getContext("2d");
+
+    let w, h;
+
+    function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+    }
+
+    resize();
+    window.onresize = resize;
+
+
+    /* ---------------------------
+       MOON DRAWING
+    --------------------------- */
+    function drawMoon() {
+        const moonX = w - 150;
+        const moonY = 120;
+        const radius = 60;
+
+        // Glow
+        ctx.beginPath();
+        ctx.arc(moonX, moonY, radius + 20, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(200, 220, 255, 0.15)";
+        ctx.fill();
+
+        // Moon body
+        ctx.beginPath();
+        ctx.arc(moonX, moonY, radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#e6ecff";
+        ctx.fill();
+
+        // Craters
+        ctx.fillStyle = "#c7d0e8";
+
+        ctx.beginPath();
+        ctx.arc(moonX - 20, moonY - 10, 10, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(moonX + 15, moonY + 5, 7, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(moonX - 5, moonY + 20, 5, 0, Math.PI * 2);
+        ctx.fill();
+    }
+
+
+    /* ---------------------------
+       STARFIELD GENERATION
+    --------------------------- */
+    const stars = [];
+
+    for (let i = 0; i < 200; i++) {
+        stars.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            size: Math.random() * 1.2,
+            twinkle: Math.random() * 0.05
+        });
+    }
+
+    function rand(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+
+    /* ---------------------------
+       SHOOTING STAR LOGIC
+    --------------------------- */
+    let nextShoot = Date.now() + rand(2500, 5000);
+    let shootingStar = null;
+
+
+    /* ---------------------------
+       MAIN ANIMATION LOOP
+    --------------------------- */
+    function animate() {
+        ctx.clearRect(0, 0, w, h);
+
+        drawMoon();
+
+        // Stars
+        for (let s of stars) {
+            s.size += s.twinkle * (Math.random() > 0.5 ? 1 : -1);
+            ctx.fillStyle = "rgba(255,255,255,0.8)";
+            ctx.fillRect(s.x, s.y, s.size, s.size);
+        }
+
+        // Shooting star spawn
+        if (!shootingStar && Date.now() > nextShoot) {
+            shootingStar = {
+                x: rand(0, w),
+                y: rand(0, h / 2),
+                speed: rand(8, 12),
+                length: rand(80, 120)
+            };
+            nextShoot = Date.now() + rand(2500, 5000);
+        }
+
+        // Draw shooting star
+        if (shootingStar) {
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 2;
+
+            ctx.beginPath();
+            ctx.moveTo(shootingStar.x, shootingStar.y);
+            ctx.lineTo(
+                shootingStar.x - shootingStar.length,
+                shootingStar.y - shootingStar.length / 3
+            );
+            ctx.stroke();
+
+            shootingStar.x += shootingStar.speed;
+            shootingStar.y += shootingStar.speed * 0.3;
+
+            if (shootingStar.x > w + 200 || shootingStar.y > h + 200) {
+                shootingStar = null;
+            }
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+
+</script>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer class="footer">
+    © 2026 xynx — All rights reserved.
+</footer>
+
+</body>
+</html>
